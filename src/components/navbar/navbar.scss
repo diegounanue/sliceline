@@ -1,0 +1,13 @@
+@import '../../variables';
+
+.navbar {
+    background-color: $primary-color;
+    padding: 10px;
+}
+
+.navbar__logo{
+    font-family: $font-secondary;
+    color: $color-white;
+    font-size: 20px;
+    text-shadow: 2px 2px 4px $color-light-black;    
+}
