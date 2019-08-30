@@ -7,11 +7,13 @@
     width: 100%;
     margin-bottom: 173px;
     top: 0;
+    z-index: 1000;
+    box-shadow: 1px 2px 12px 2px #000000d6;
 }
 
 .navbar__logo{
     font-family: $font-secondary;
     color: $color-white;
     font-size: 20px;
-    text-shadow: 2px 2px 4px $color-light-black;    
+    text-shadow: 2px 2px 4px $color-light-black;
 }
