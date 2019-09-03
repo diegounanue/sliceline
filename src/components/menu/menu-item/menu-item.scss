@@ -1,14 +1,27 @@
 @import '../../../variables';
 
-.menuitem{
+.menuitem {
     height: 200px;
-    width: 100%;
     background-size: cover;
     background-position: center;
     border-radius: 26px;
     box-shadow: 3px 4px 9px 0px #32322e;
     padding: 20px 0 0 20px;
     box-sizing: border-box;
+    margin-top: 5px;
+    filter: contrast(80%);
+    transition-property: margin-top filter;
+    transition-delay: 0.1s;
+    transition-duration: 0.2s;
+
+    &:hover {
+        margin-top: 0px;
+        // margin bottom to push the bottom item, and not make it move!
+        margin-bottom: 5px;
+        cursor: pointer;
+        filter: contrast(100%);
+        width: 100%;
+    }
 }
 
 .menuitem_title {

@@ -5,7 +5,7 @@ const Navbar = () => {
     return (
         <div className="navbar">
             <span className="navbar__logo">
-                slice line 🍕
+                slice line <span role="img" aria-label="pizza icon"> 🍕 </span>
             </span>
         </div>
     );

@@ -1,13 +1,6 @@
-.menu {
-    display: flex;
-    width: 50%;
-    height: 1000px;
-    flex-wrap: wrap;
-    margin: 20px 20px;
-}
 
 .menu__list {
-    width: 100%;
+    max-width: 100%;
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-gap: 30px 50px;

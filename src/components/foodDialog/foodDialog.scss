@@ -1,0 +1,39 @@
+@import '../../variables';
+
+.dialog__shadow {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    background-color: $color-light-gray;
+    z-index: 1000;
+    opacity: 0.6;
+}
+
+.dialog {
+    position: fixed;
+    width: 500px;
+    height: 600px;
+    max-height: calc(100% - 100px);
+    z-index: 2000;
+    background-color: $color-white;
+    // position from the 50% - half of the width to center
+    left: calc(50% - 250px);
+    // same for top
+    top: calc(50% - 300px);
+}
+
+.dialog__banner {
+    height: 160px;
+    margin-bottom: 20px;
+    background-position: center;
+    background-size: cover;
+}
+
+.dialog__title {
+    font-family: $font-primary;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.6);
+    position: absolute;
+    top: 80px;
+    font-weight: 600;
+}

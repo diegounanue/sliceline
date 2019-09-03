@@ -1,20 +1,32 @@
 import React from 'react';
 import './menu.scss';
-import { foodItems } from "../../data/foodData";
+import { foods } from "../../data/foodData";
 import MenuItem from './menu-item/menu-item';
 
-const menu = () => {
+const menu = ({setOpenFood}) => {
     return (
-        <div className="menu">
-            <div className="menu__list">
-                {
-                    foodItems.map(
-                        item => <MenuItem name={item.name} imageUrl={item.img} />
-                    )
-                }
-            </div>
+        <div>
+            {
+                Object.entries(foods).map(
+                    ([categodyTitle, foodItems]) => {
+                        console.log(foods)
+                        return (
+                            <div key={categodyTitle}>
+                                <h3> {categodyTitle} </h3>
 
-        </div>
+                                <div className="menu__list">
+                                    {
+                                        foodItems.map(
+                                            item => <MenuItem key={item.name} name={item.name} imageUrl={item.img} onClick={() => setOpenFood(item)} />
+                                        )
+                                    }
+                                </div>
+                            </div>
+                        )
+                    }
+                )
+            }
+        </ div>
     );
 }
 

@@ -66,6 +66,7 @@ export const foods = foodItems.reduce((res, food) => {
   if (!res[food.section]) {
     res[food.section] = [];
   }
+  // creates an array with the key food.section, pushing creates an array
   res[food.section].push(food);
   return res;
 }, {});
