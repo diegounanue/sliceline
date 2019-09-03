@@ -12,6 +12,10 @@ const foodDialog = ({ openFood, setOpenFood }) => {
                     <div className="dialog__banner" style={{ backgroundImage: `url(${openFood.img}` }}>
                         <span className="dialog__title"> {openFood.name} </span>
                     </div>
+                    <div className="dialog__content"><div></div></div>
+                    <div className="dialog__footer">
+                        <div className="custom_button"> add to cart</div>
+                    </div>
                 </div>
             </>)
             : null
