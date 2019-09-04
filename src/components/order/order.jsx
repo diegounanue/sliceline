@@ -15,7 +15,7 @@ const Order = ({ orders }) => {
                             <span>1</span>
                             <span>{item.name}</span>
                             <span></span>
-                            <span>{formatPrice(item.price)}</span>
+                            <span>{formatPrice(item.price * item.quantity)}</span>
                         </div>
                     ))
                 }

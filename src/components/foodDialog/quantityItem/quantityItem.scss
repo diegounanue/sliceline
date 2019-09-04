@@ -1,0 +1,24 @@
+@import "../../../variables";
+
+.quantity-item {
+  display: flex;
+  font-weight: 600;
+  justify-content: center;
+  padding: 20px;
+
+  .quantity-item__title {
+  }
+
+  .quantity-item__btn {
+    border: 2px solid $primary-color;
+    width: 20px;
+    text-align: center;
+    margin: 0 5px;
+    cursor: pointer;
+    color: $primary-color;
+  }
+
+  .quantity-item__input {
+    width: 60px;
+  }
+}
