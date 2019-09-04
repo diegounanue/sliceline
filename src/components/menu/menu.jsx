@@ -17,7 +17,7 @@ const menu = ({setOpenFood}) => {
                                 <div className="menu__list">
                                     {
                                         foodItems.map(
-                                            item => <MenuItem key={item.name} name={item.name} imageUrl={item.img} onClick={() => setOpenFood(item)} />
+                                            item => <MenuItem key={item.name} item={item} onClick={() => setOpenFood(item)} />
                                         )
                                     }
                                 </div>

@@ -1,21 +1,32 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './App.scss';
 import Navbar from './components/navbar/navbar';
 import Banner from './components/banner/banner';
 import Menu from './components/menu/menu';
 import FoodDialog from './components/foodDialog/foodDialog';
+import Order from './components/order/order';
+import useOpenFood from './hooks/useFood';
+import useOrders from './hooks/useOrders';
+import useTitle from './hooks/useTitle';
 
 function App() {
+  const openFood = useOpenFood();
+  // const { openFood, setOpenFood} = useFood; and then use it as properties like openFood={openFood}, is equal to just {...useFood}
 
-  const [openFood, setOpenFood] = useState();
+  const orders = useOrders();
+
+  useTitle({...openFood, ...orders});
+
 
   return (
     <div className="App">
-      <FoodDialog openFood={openFood} setOpenFood={setOpenFood} />
+      {/* send the hook (state) as a property */}
+      <FoodDialog {...openFood} {...orders} />
+      <Order {...orders} />
       <Navbar />
       <Banner />
       <div className="appContainer">
-        <Menu setOpenFood={setOpenFood} />
+        <Menu {...openFood} />
       </div>
     </div>
   );

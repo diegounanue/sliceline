@@ -13,7 +13,6 @@
 .dialog {
     position: fixed;
     width: 500px;
-    //height: 600px;
     max-height: calc(100% - 100px);
     z-index: 2000;
     background-color: $color-white;
@@ -58,4 +57,5 @@
     background-color: #f44336;
     color: white;
     cursor: pointer;
+    font-weight: 600;
 }
