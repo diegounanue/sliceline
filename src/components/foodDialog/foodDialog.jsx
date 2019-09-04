@@ -2,12 +2,15 @@ import React from 'react';
 import './foodDialog.scss';
 import { formatPrice } from '../../data/foodData';
 import useQuantity from '../../hooks/useQuantity';
+import useToppings from '../../hooks/useToppings';
 import QuantityItem from './quantityItem/quantityItem';
+import Toppings from './toppings/toppings';
 
 const FoodDialog = ({ openFood, setOpenFood, orders, setOrders }) => {
 
     // if openFood is null returns null, if both are true returns the rigth element openFoor.quantity
     const quantity = useQuantity(openFood && openFood.quantity);
+    const toppings = useToppings(openFood && openFood.toppings);
 
     if (!openFood) return null;
 
@@ -16,7 +19,8 @@ const FoodDialog = ({ openFood, setOpenFood, orders, setOrders }) => {
         // spread all properties
         ...openFood,
         // when I change the quantity with setQuantity in the child QuantityItem this component re renders updating the order constant
-        quantity: quantity.quantity
+        quantity: quantity.value,
+        toppings: toppings.toppings
     }
 
     const close = () => {
@@ -30,6 +34,8 @@ const FoodDialog = ({ openFood, setOpenFood, orders, setOrders }) => {
         // to send the orders to different components like orders
 
         setOrders([...orders, order]);
+        //quantity.setValue(1);
+        close();
     }
 
     return (
@@ -40,7 +46,8 @@ const FoodDialog = ({ openFood, setOpenFood, orders, setOrders }) => {
                     <span className="dialog__title"> {openFood.name} </span>
                 </div>
                 <div className="dialog__content">
-                    <QuantityItem {...quantity} />
+                    <Toppings {...toppings} />
+                    <QuantityItem quantity={quantity} />
                 </div>
                 <div className="dialog__footer">
                     <div className="custom-button" onClick={onSetOrder}> add to order: {formatPrice(order.price * order.quantity )}</div>

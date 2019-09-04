@@ -45,8 +45,14 @@
     @include center-content;
     height: 50px;
     width: 200px;
-    background-color: #f44336;
-    color: white;
+    background-color: $primary-color;
+    color: $color-white;
     cursor: pointer;
     font-weight: 600;
+}
+
+.order__topping{
+    font-size: 15px;
+    color: $color-banner-background;
+    //margin-left: 5px;
 }

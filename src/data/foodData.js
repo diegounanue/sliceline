@@ -70,3 +70,14 @@ export const foods = foodItems.reduce((res, food) => {
   res[food.section].push(food);
   return res;
 }, {});
+
+
+const pricePerTopping = 0.5;
+
+export function getPrice(order) {
+  return (
+    order.quantity *
+    (order.price +
+      order.toppings.filter(t => t.checked).length * pricePerTopping)
+  );
+}

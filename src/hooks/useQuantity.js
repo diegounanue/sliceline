@@ -1,25 +1,19 @@
-import { useState } from 'react';
+import { useState } from "react";
 
-const useQuantity = (defaultValue) => {
+export default function useQuantity(defaultQuantity) {
+  const [value, setValue] = useState(defaultQuantity || 1);
 
-    const [quantity, setQuantity] = useState(defaultValue || 1);
-
-    const onQuantityChange = e => {
-        // if the user enters a string or empty string I convert it to number +'s' returns NaN so NaN > 0 is false
-        if(!+e.target.value >= 1) {
-            setQuantity(1);
-            console.log(quantity);
-            return;
-        }
-        setQuantity(+e.target.value);
-        console.log(quantity);
+  function onChange(e) {
+    if (!(+e.target.value >= 1)) {
+      setValue(1);
+      return;
     }
+    setValue(+e.target.value);
+  }
 
-    return {
-        quantity,
-        setQuantity,
-        onQuantityChange
-    }
+  return {
+    value,
+    setValue,
+    onChange
+  };
 }
-
-export default useQuantity;
