@@ -1,7 +1,7 @@
 import { useState } from "react";
 
-export default function useQuantity(defaultQuantity) {
-  const [value, setValue] = useState(defaultQuantity || 1);
+export default function useQuantity() {
+  const [value, setValue] = useState(1);
 
   function onChange(e) {
     if (!(+e.target.value >= 1)) {

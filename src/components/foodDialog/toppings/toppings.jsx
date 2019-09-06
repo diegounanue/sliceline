@@ -3,12 +3,12 @@ import './toppings.scss';
 
 const Toppings = ({ toppings, checkTopping }) => {
     return (
-        <div>
+        <div className="toppings">
             {
                 toppings.map((topping, i) => {
-                    return <>
+                    return <div>
                         <input type="checkbox" name="vehicle1" value={topping.checked} checked={topping.checked} onClick={() => checkTopping(i)} /> <span> {topping.name} </span>
-                    </>
+                    </div >
                 })}
         </div>
     );
